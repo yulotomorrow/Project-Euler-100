@@ -1,0 +1,4 @@
+﻿  Problem6.cpp
+E:\my\Code\Project-Euler\Problem6\Problem6.cpp(12,19): warning C4244: '+=': conversion from 'double' to 'long', possible loss of data
+E:\my\Code\Project-Euler\Problem6\Problem6.cpp(24,12): warning C4244: 'return': conversion from 'double' to 'long', possible loss of data
+  Problem6.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem6.exe
