@@ -10,16 +10,49 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     39229,       1231]
-NotebookOptionsPosition[     36598,       1140]
-NotebookOutlinePosition[     37096,       1161]
-CellTagsIndexPosition[     37010,       1156]
+NotebookDataLength[     37098,       1236]
+NotebookOptionsPosition[     34696,       1156]
+NotebookOutlinePosition[     35038,       1171]
+CellTagsIndexPosition[     34995,       1168]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  StyleBox[
+   RowBox[{"Project", " ", "Euler"}], "Title"]}]], "Input",
+ CellChangeTimes->{{3.8355766593715496`*^9, 3.835576666101482*^9}}],
+
+Cell[BoxData[{
+ StyleBox[
+  RowBox[{
+   RowBox[{"Mathematica", " ", "version"}], ",", " ", 
+   RowBox[{"Feb", " ", "2015"}]}], "Subsubsection",
+  FontFamily->"Inter",
+  FontSize->12], "\[IndentingNewLine]", 
+ StyleBox[
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"I", " ", 
+     RowBox[{"didn", "'"}], "t", " ", "really", " ", "have", " ", "idea", " ",
+      "how", " ", "to", " ", "code", " ", "back", " ", "then"}], " ", ">", 
+    "_", "<"}], ")"}], "Subsubsection",
+  FontFamily->"Inter",
+  FontSize->12]}], "Input",
+ CellChangeTimes->{{3.8355771600510426`*^9, 3.835577246211729*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"problem", " ", "1"}], "Section",
+  FontFamily->"Calibri",
+  FontSize->20,
+  FontColor->GrayLevel[0]]], "Input",
+ CellChangeTimes->{{3.835576677518822*^9, 3.8355766802255588`*^9}, 
+   3.8355768231336603`*^9, {3.8355768680198717`*^9, 3.835576869089784*^9}}],
 
 Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"Clear", "[", "k", "]"}], ";"}], "\[IndentingNewLine]", 
@@ -60,7 +93,32 @@ Cell[BoxData["233168"], "Print",
    3.6323968405038357`*^9}}]
 }, Open  ]],
 
-Cell[CellGroupData[{
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"problem", " ", 
+   StyleBox["2", "Section",
+    FontFamily->"Calibri",
+    FontSize->20,
+    FontColor->GrayLevel[0]], " ", 
+   RowBox[{"(", 
+    StyleBox[
+     RowBox[{
+      StyleBox["un", "Section",
+       FontFamily->"Calibri",
+       FontSize->20,
+       FontColor->GrayLevel[0]], "fi", 
+      StyleBox["n", "Section",
+       FontFamily->"Calibri",
+       FontSize->20,
+       FontColor->GrayLevel[0]], "is", 
+      StyleBox["h", "Section",
+       FontFamily->"Calibri",
+       FontSize->20,
+       FontColor->GrayLevel[0]], "ed"}]], ")"}]}], "Section",
+  FontFamily->"Calibri",
+  FontSize->20,
+  FontColor->GrayLevel[0]]], "Input",
+ CellChangeTimes->{{3.835576963606731*^9, 3.835576990799081*^9}}],
 
 Cell[BoxData[
  RowBox[{"\[IndentingNewLine]", 
@@ -97,98 +155,13 @@ Cell[BoxData[
   3.6323971872444715`*^9, 3.632397239469092*^9}, {3.632397411939427*^9, 
   3.6323974142364206`*^9}}],
 
-Cell[BoxData["7"], "Print",
- CellChangeTimes->{{3.6323970571993065`*^9, 3.6323971267528095`*^9}, {
-  3.632397188713293*^9, 3.632397253673933*^9}}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
 Cell[BoxData[
- RowBox[{"?", "Sum"}]], "Input",
- CellChangeTimes->{{3.632397320837857*^9, 3.6323973242130327`*^9}}],
-
-Cell[BoxData[
- RowBox[{
-  StyleBox["\<\"\\!\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", \
-RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
-RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
-SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
-\\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) evaluates the sum \
-\\!\\(\\*RowBox[{UnderoverscriptBox[\\\"\[Sum]\\\", \
-RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\"=\\\", \\\"1\\\"}], \
-SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", FontSlant \
--> \\\"Italic\\\"]], LimitsPositioning -> True], StyleBox[\\\"f\\\", \\\"TI\\\
-\"]}]\\). \\n\\!\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", \
-RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
-RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
-SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
-\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
-StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) starts \
-with \\!\\(\\*RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\"=\\\", \
-SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
-\\\"TI\\\"]]}]\\). \\n\\!\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", \
-RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
-RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
-SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
-\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
-StyleBox[\\\"max\\\", \\\"TI\\\"]], \\\",\\\", StyleBox[\\\"di\\\", \
-\\\"TI\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) uses steps \
-\\!\\(\\*RowBox[{StyleBox[\\\"d\\\", \\\"TI\\\"], \\\"\[InvisibleSpace]\\\", \
-StyleBox[\\\"i\\\", \\\"TI\\\"]}]\\). \\n\\!\\(\\*RowBox[{\\\"Sum\\\", \
-\\\"[\\\", RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", \
-RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
-RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
-StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \
-\\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\
-\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) \
-uses successive values \\!\\(\\*SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
-StyleBox[\\\"1\\\", \\\"TR\\\"]]\\), \
-\\!\\(\\*SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \\\
-\"TR\\\"]]\\), \[Ellipsis] .\\n\\!\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", \
-RowBox[{StyleBox[\\\"f\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", \
-RowBox[{StyleBox[\\\"i\\\", \\\"TI\\\"], \\\",\\\", \
-SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
-\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
-StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\
-\", RowBox[{StyleBox[\\\"j\\\", \\\"TI\\\"], \\\",\\\", \
-SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", \
-\\\"TI\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], \
-StyleBox[\\\"max\\\", \\\"TI\\\"]]}], \\\"}\\\"}], \\\",\\\", StyleBox[\\\"\
-\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"]\\\"}]\\) evaluates the multiple sum \\!\
-\\(\\*RowBox[{UnderoverscriptBox[\\\"\[Sum]\\\", RowBox[{StyleBox[\\\"i\\\", \
-\\\"TI\\\"], \\\"=\\\", SubscriptBox[StyleBox[\\\"i\\\", \\\"TI\\\"], \
-StyleBox[\\\"min\\\", FontSlant -> \\\"Italic\\\"]]}], SubscriptBox[StyleBox[\
-\\\"i\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", FontSlant -> \\\"Italic\\\"]], \
-LimitsPositioning -> True], RowBox[{UnderoverscriptBox[\\\"\[Sum]\\\", \
-RowBox[{StyleBox[\\\"j\\\", \\\"TI\\\"], \\\"=\\\", \
-SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], StyleBox[\\\"min\\\", FontSlant \
--> \\\"Italic\\\"]]}], SubscriptBox[StyleBox[\\\"j\\\", \\\"TI\\\"], \
-StyleBox[\\\"max\\\", FontSlant -> \\\"Italic\\\"]], LimitsPositioning -> \
-True], RowBox[{\\\"\[Ellipsis]\\\", StyleBox[\\\"f\\\", \\\"TI\\\"]}]}]}]\\). \
-\\n\\!\\(\\*RowBox[{\\\"Sum\\\", \\\"[\\\", RowBox[{StyleBox[\\\"f\\\", \
-\\\"TI\\\"], \\\",\\\", StyleBox[\\\"i\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) \
-gives the indefinite sum \\!\\(\\*RowBox[{UnderscriptBox[\\\"\[Sum]\\\", \
-StyleBox[\\\"i\\\", \\\"TI\\\"]], StyleBox[\\\"f\\\", \\\"TI\\\"]}]\\).\"\>", 
-   "MSG"], "\[NonBreakingSpace]", 
-  ButtonBox[
-   StyleBox["\[RightSkeleton]", "SR"],
-   Active->True,
-   BaseStyle->"Link",
-   ButtonData->"paclet:ref/Sum"]}]], "Print", "PrintUsage",
- CellChangeTimes->{3.6323973261193495`*^9},
- CellTags->"Info3632426125-3961530"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Factor", "[", "600851475143", "]"}]], "Input",
- CellChangeTimes->{{3.632397579285615*^9, 3.632397584016255*^9}}],
-
-Cell[BoxData["600851475143"], "Output",
- CellChangeTimes->{3.632397584922864*^9}]
-}, Open  ]],
+ StyleBox[
+  RowBox[{"problem", " ", "3"}], "Section",
+  FontFamily->"Calibri",
+  FontSize->20,
+  FontColor->GrayLevel[0]]], "Input",
+ CellChangeTimes->{{3.835576876232003*^9, 3.8355768763696184`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -211,11 +184,31 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", 
-   RowBox[{"10000", "~", "1000000"}], "*)"}], 
-  "\[IndentingNewLine]"}]], "Input",
- CellChangeTimes->{{3.6324794530168867`*^9, 3.632479481520466*^9}}],
+ StyleBox[
+  RowBox[{"problem", " ", "5", " ", 
+   RowBox[{"(", 
+    StyleBox[
+     RowBox[{
+      StyleBox["u", "Section",
+       FontFamily->"Calibri",
+       FontSize->20,
+       FontColor->GrayLevel[0]], "nf", 
+      StyleBox["i", "Section",
+       FontFamily->"Calibri",
+       FontSize->20,
+       FontColor->GrayLevel[0]], "ni", 
+      StyleBox["s", "Section",
+       FontFamily->"Calibri",
+       FontSize->20,
+       FontColor->GrayLevel[0]], "he", 
+      StyleBox["d", "Section",
+       FontFamily->"Calibri",
+       FontSize->20,
+       FontColor->GrayLevel[0]]}]], ")"}]}], "Section",
+  FontFamily->"Calibri",
+  FontSize->20,
+  FontColor->GrayLevel[0]]], "Input",
+ CellChangeTimes->{{3.835577043191639*^9, 3.8355770503391576`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -372,10 +365,16 @@ Cell[BoxData[
     RowBox[{"5", ",", "1"}], "}"}]}], "}"}]], "Print",
  CellChangeTimes->{3.6324800853025637`*^9}]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.6324801664358892`*^9, 3.632480175748888*^9}}],
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"problem", " ", "7"}], "Section",
+  FontFamily->"Calibri",
+  FontSize->20,
+  FontColor->GrayLevel[0]]], "Input",
+ CellChangeTimes->{{3.6324801664358892`*^9, 3.632480175748888*^9}, {
+  3.8355771002165003`*^9, 3.835577103301574*^9}}],
 
 Cell[CellGroupData[{
 
@@ -387,6 +386,14 @@ Cell[BoxData["104743"], "Output",
  CellChangeTimes->{3.6324802708844194`*^9}]
 }, Open  ]],
 
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"problem", " ", "9"}], "Section",
+  FontFamily->"Calibri",
+  FontSize->20,
+  FontColor->GrayLevel[0]]], "Input",
+ CellChangeTimes->{{3.8355771385056486`*^9, 3.8355771386856947`*^9}}],
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"a", "+", "b", "+", "c"}], "=", "1000"}], "\[IndentingNewLine]", 
@@ -394,8 +401,9 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"a", "^", "2"}], "+", 
    RowBox[{"b", "^", "2"}]}], "=", 
-  RowBox[{"c", "^", "2"}]}], "\[IndentingNewLine]"}], "Input",
- CellChangeTimes->{{3.632480788564838*^9, 3.6324808067074747`*^9}}],
+  RowBox[{"c", "^", "2"}]}]}], "Input",
+ CellChangeTimes->{{3.632480788564838*^9, 3.6324808067074747`*^9}, 
+   3.8355770836731977`*^9}],
 
 Cell[CellGroupData[{
 
@@ -1107,6 +1115,14 @@ Cell[BoxData["31875000"], "Output",
   3.6324823531056*^9}]
 }, Open  ]],
 
+Cell[BoxData[
+ StyleBox[
+  RowBox[{"problem", " ", "10"}], "Section",
+  FontFamily->"Calibri",
+  FontSize->20,
+  FontColor->GrayLevel[0]]], "Input",
+ CellChangeTimes->{{3.8355771526043563`*^9, 3.835577152904674*^9}}],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[{
@@ -1147,91 +1163,80 @@ StyleDefinitions->"Default.nb"
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{
- "Info3632426125-3961530"->{
-  Cell[3720, 110, 4518, 69, 225, "Print",
-   CellTags->"Info3632426125-3961530"]}
- }
+CellTagsIndex->{}
 *)
 (*CellTagsIndex
-CellTagsIndex->{
- {"Info3632426125-3961530", 36904, 1150}
- }
+CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[558, 20, 186, 4, 79, "Input"],
+Cell[747, 26, 583, 16, 50, "Input"],
+Cell[1333, 44, 291, 7, 39, "Input"],
 Cell[CellGroupData[{
-Cell[580, 22, 1254, 31, 92, "Input"],
-Cell[1837, 55, 227, 4, 23, "Print"]
+Cell[1649, 55, 1254, 31, 92, "Input"],
+Cell[2906, 88, 227, 4, 23, "Print"]
 }, Open  ]],
+Cell[3148, 95, 739, 25, 39, "Input"],
+Cell[3890, 122, 1316, 33, 252, "Input"],
+Cell[5209, 157, 215, 6, 39, "Input"],
 Cell[CellGroupData[{
-Cell[2101, 64, 1316, 33, 252, "Input"],
-Cell[3420, 99, 146, 2, 23, "Print"]
+Cell[5449, 167, 98, 2, 31, "Input"],
+Cell[5550, 171, 342, 11, 31, "Output"]
 }, Open  ]],
+Cell[5907, 185, 757, 25, 39, "Input"],
 Cell[CellGroupData[{
-Cell[3603, 106, 114, 2, 31, "Input"],
-Cell[3720, 110, 4518, 69, 225, "Print",
- CellTags->"Info3632426125-3961530"]
-}, Open  ]],
+Cell[6689, 214, 332, 8, 31, "Input"],
 Cell[CellGroupData[{
-Cell[8275, 184, 136, 2, 31, "Input"],
-Cell[8414, 188, 81, 1, 31, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[8532, 194, 98, 2, 31, "Input"],
-Cell[8633, 198, 342, 11, 31, "Output"]
-}, Open  ]],
-Cell[8990, 212, 192, 5, 52, "Input"],
-Cell[CellGroupData[{
-Cell[9207, 221, 332, 8, 31, "Input"],
-Cell[CellGroupData[{
-Cell[9564, 233, 138, 4, 23, "Print"],
-Cell[9705, 239, 138, 4, 23, "Print"],
-Cell[9846, 245, 138, 4, 23, "Print"],
-Cell[9987, 251, 138, 4, 23, "Print"],
-Cell[10128, 257, 138, 4, 23, "Print"],
-Cell[10269, 263, 212, 7, 23, "Print"],
-Cell[10484, 272, 138, 4, 23, "Print"],
-Cell[10625, 278, 138, 4, 23, "Print"],
-Cell[10766, 284, 138, 4, 23, "Print"],
-Cell[10907, 290, 212, 7, 23, "Print"],
-Cell[11122, 299, 139, 4, 23, "Print"],
-Cell[11264, 305, 212, 7, 23, "Print"],
-Cell[11479, 314, 139, 4, 23, "Print"],
-Cell[11621, 320, 212, 7, 23, "Print"],
-Cell[11836, 329, 212, 7, 23, "Print"],
-Cell[12051, 338, 138, 4, 23, "Print"],
-Cell[12192, 344, 139, 4, 23, "Print"],
-Cell[12334, 350, 212, 7, 23, "Print"],
-Cell[12549, 359, 139, 4, 23, "Print"],
-Cell[12691, 365, 214, 7, 23, "Print"]
+Cell[7046, 226, 138, 4, 23, "Print"],
+Cell[7187, 232, 138, 4, 23, "Print"],
+Cell[7328, 238, 138, 4, 23, "Print"],
+Cell[7469, 244, 138, 4, 23, "Print"],
+Cell[7610, 250, 138, 4, 23, "Print"],
+Cell[7751, 256, 212, 7, 23, "Print"],
+Cell[7966, 265, 138, 4, 23, "Print"],
+Cell[8107, 271, 138, 4, 23, "Print"],
+Cell[8248, 277, 138, 4, 23, "Print"],
+Cell[8389, 283, 212, 7, 23, "Print"],
+Cell[8604, 292, 139, 4, 23, "Print"],
+Cell[8746, 298, 212, 7, 23, "Print"],
+Cell[8961, 307, 139, 4, 23, "Print"],
+Cell[9103, 313, 212, 7, 23, "Print"],
+Cell[9318, 322, 212, 7, 23, "Print"],
+Cell[9533, 331, 138, 4, 23, "Print"],
+Cell[9674, 337, 139, 4, 23, "Print"],
+Cell[9816, 343, 212, 7, 23, "Print"],
+Cell[10031, 352, 139, 4, 23, "Print"],
+Cell[10173, 358, 214, 7, 23, "Print"]
 }, Open  ]]
-}, Open  ]],
-Cell[12932, 376, 94, 1, 31, "Input"],
+}, Closed]],
+Cell[10414, 369, 266, 7, 33, "Input"],
 Cell[CellGroupData[{
-Cell[13051, 381, 128, 2, 31, "Input"],
-Cell[13182, 385, 77, 1, 31, "Output"]
+Cell[10705, 380, 128, 2, 31, "Input"],
+Cell[10836, 384, 77, 1, 31, "Output"]
 }, Open  ]],
-Cell[13274, 389, 322, 8, 72, "Input"],
+Cell[10928, 388, 217, 6, 39, "Input"],
+Cell[11148, 396, 327, 9, 52, "Input"],
 Cell[CellGroupData[{
-Cell[13621, 401, 459, 13, 31, "Input"],
-Cell[14083, 416, 11852, 378, 512, "Output"]
+Cell[11500, 409, 459, 13, 31, "Input"],
+Cell[11962, 424, 11852, 378, 512, "Output"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[25972, 799, 140, 4, 25, "Input"],
-Cell[26115, 805, 6363, 209, 332, "Output"]
+Cell[23851, 807, 140, 4, 25, "Input"],
+Cell[23994, 813, 6363, 209, 332, "Output"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[32515, 1019, 1006, 28, 46, "Input"],
-Cell[33524, 1049, 221, 5, 31, "Output"]
+Cell[30394, 1027, 1006, 28, 46, "Input"],
+Cell[31403, 1057, 221, 5, 31, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33782, 1059, 1528, 43, 132, "Input"],
-Cell[35313, 1104, 124, 2, 31, "Output"]
+Cell[31661, 1067, 1528, 43, 132, "Input"],
+Cell[33192, 1112, 124, 2, 31, "Output"]
 }, Open  ]],
+Cell[33331, 1117, 216, 6, 39, "Input"],
 Cell[CellGroupData[{
-Cell[35474, 1111, 907, 21, 52, "Input"],
-Cell[36384, 1134, 198, 3, 31, "Output"]
+Cell[33572, 1127, 907, 21, 52, "Input"],
+Cell[34482, 1150, 198, 3, 31, "Output"]
 }, Open  ]]
 }
 ]
