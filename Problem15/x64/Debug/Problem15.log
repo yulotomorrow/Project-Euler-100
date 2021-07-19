@@ -1,0 +1,3 @@
+﻿  Problem15.cpp
+E:\my\Code\Project-Euler\Problem15\Problem15.cpp(32,19): warning C4244: '+=': conversion from 'double' to '__int64', possible loss of data
+  Problem15.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem15.exe
