@@ -1,3 +1,4 @@
-﻿  Problem16.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Problem16.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Problem16.cpp
 E:\my\Code\Project-Euler\Problem16\Problem16.cpp(17,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Problem16.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem16.exe
+  Problem16.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem16_20.exe
