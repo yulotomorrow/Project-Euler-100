@@ -1,0 +1,3 @@
+﻿  Problem30.cpp
+E:\my\Code\Project-Euler\Problem30\Problem30.cpp(16,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Problem30.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem30.exe
