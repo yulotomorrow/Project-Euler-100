@@ -8,7 +8,7 @@ using namespace std;
 
 void PrimeNumber(int upperLimit, vector<int>& prime)
 {
-	for (int i = 3; i <= upperLimit; ++i)
+	for (int i = 2; i <= upperLimit; ++i)
 	{
 		for (auto& a : prime)
 		{
@@ -23,21 +23,30 @@ void PrimeNumber(int upperLimit, vector<int>& prime)
 	}
 }
 
+
 // Start from n = 7 because there's none in n = 8,9
-/*void GeneratePandigital() 
+array<int, 7> PrevPandigital()
 {
 	array<int, 7> digits = { 7, 6, 5, 4, 3, 2, 1 };
 	vector<int> nums = {};
-	while (prev_permutation(digits.begin(), digits.end())) 
+	for (int i = 6; i > 0; --i) 
 	{
-		int permuNum = 0;
-		for (int i = 0; i < 7; ++i)
+		if (digits[i-1] < digits[i]) 
 		{
-			permuNum += digits[i] * (int)pow(10, 6-i);
+			for (int j = 6; j > i; --j)
+			{
+				if (digits[i - 1] < digits[j])
+				{
+					int temp = digits[i - 1];
+					digits[i - 1] = digits[j];
+					digits[j] = temp;
+					return digits;
+				}
+			}
 		}
-		nums.push_back(permuNum);
 	}
-}*/
+	return digits;
+}
 
 int FindPandigital(const vector<int>& prime) 
 {

@@ -1,0 +1,5 @@
+﻿  Problem40.cpp
+E:\my\Code\Project-Euler\Problem40\Problem40.cpp(17,39): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem40\Problem40.cpp(22,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem40\Problem40.cpp(28,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Problem40.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem40.exe
