@@ -1,0 +1,3 @@
+﻿  Problem47.cpp
+E:\my\Code\Project-Euler\Problem47\Problem47.cpp(72,14): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Problem47.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem47.exe

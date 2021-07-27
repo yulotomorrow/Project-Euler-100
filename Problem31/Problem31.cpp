@@ -8,7 +8,7 @@ using namespace std;
 //solve 10 and extend to 100 then 200
 //combinations (n+r-1)!/r!(n-1)! n:pn
 
-int Factorio(int n) 
+int Factorial(int n) 
 {
 	int f = 1;
 	for (int i = 1; i <= n; ++i) 
@@ -41,7 +41,8 @@ long long DivideCases(int num1, int num2, int caseNum)
 	}
 	else 
 	{
-		result = FactorialReduce((num1 + 2 - 1), (num1 - 1) )/2 + FactorialReduce((num2 + 5 - 1), (num2- 1)) / Factorio(5 ) + 1;
+//		result = FactorialReduce((num1 + 2 - 1), (num1 - 1) )/2 + FactorialReduce((num2 + 5 - 1), (num2- 1)) / Factorial(5 ) + 1;
+		result = FactorialReduce((num1 + 2 - 1), (num1 - 1)) / 2 + 1 + 1;
 	}
 	return result;
 }
@@ -54,7 +55,8 @@ void CoinProblem()
 	//p5 = {p1+2*p2, p5}
 	int p5 = 1 * 3 + 1;
 	//p10 = {2*p5, 5*p2(one extra), p10}
-	int p10 = Factorio(p5 + 2 - 1) / Factorio(p5-1) /Factorio(2) + Factorio(p2 + 5 - 1) / Factorio(p2- 1) / Factorio(5 ) + 1;
+//	int p10 = Factorial(p5 + 2 - 1) / Factorial(p5-1) /Factorial(2) + Factorial(p2 + 5 - 1) / Factorial(p2- 1) / Factorial(5 ) + 1;
+	int p10 = Factorial(p5 + 2 - 1) / Factorial(p5 - 1) / Factorial(2) + 1 + 1;
 	cout << p10 << "\n";
 	vector<int> storage = { p1, p2 };
 	long long result = 1;

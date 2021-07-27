@@ -1,5 +1,5 @@
 ﻿  Problem31.cpp
-E:\my\Code\Project-Euler\Problem31\Problem31.cpp(65,21): warning C4244: 'argument': conversion from '__int64' to '_Ty', possible loss of data
+E:\my\Code\Project-Euler\Problem31\Problem31.cpp(67,21): warning C4244: 'argument': conversion from '__int64' to '_Ty', possible loss of data
           with
           [
               _Ty=int

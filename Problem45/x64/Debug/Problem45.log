@@ -1,0 +1,3 @@
+﻿  Problem45.cpp
+E:\my\Code\Project-Euler\Problem45\Problem45.cpp(18,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Problem45.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem45.exe
