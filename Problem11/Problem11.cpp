@@ -19,13 +19,11 @@ void InputProcess(string line, int lineNum, array<array<int, 20>, 20>& input)
 		else 
 		{
 			input[lineNum][columnNum] = stoi(num);
-			cout << input[lineNum][columnNum]<<" ";
 			num = "";
 			++columnNum;
 		}
 	}
 	input[lineNum][columnNum] = stoi(num);
-	cout << input[lineNum][columnNum];
 }
 
 void ReadInput(array<array<int, 20>, 20>& input)
@@ -37,12 +35,12 @@ void ReadInput(array<array<int, 20>, 20>& input)
 	while (getline(fs, line)) 
 	{
 		InputProcess(line, lineNum, input);
-		cout << "\n";
 		++lineNum;
 	}
 	fs.close();
 }
 
+// An alternative way
 long long FindProduct(string inputNum)
 {
 	int i = 0;
@@ -69,6 +67,7 @@ long long FindProduct(string inputNum)
 }
 
 //Not satisfied with O(n^2), is there a better way?
+// Stupid bug... check product should puit in the for loop or it only check the last one =_=
 int RowSearch(const array<array<int, 20>, 20>& input)
 {
 	int product = 1;
@@ -78,11 +77,12 @@ int RowSearch(const array<array<int, 20>, 20>& input)
 		for (int column = 0; column < 17; ++column) 
 		{
 			product = input[row][column] * input[row ][column + 1] * input[row ][column + 2] * input[row][column + 3];
+			if (product > maxProduct)
+			{
+				maxProduct = product;
+			}
 		}
-		if (product > maxProduct)
-			maxProduct = product;
 	}
-
 	return maxProduct;
 }
 
@@ -95,9 +95,10 @@ int ColumnSearch(const array<array<int, 20>, 20>& input)
 		for (int row = 0; row < 17; ++row)
 		{
 			product = input[row][column] * input[row + 1][column] * input[row + 2][column] * input[row + 3][column];
+			if (product > maxProduct)
+				maxProduct = product;
 		}	
-		if (product > maxProduct)
-			maxProduct = product;
+
 	}
 
 	return maxProduct;
@@ -111,10 +112,13 @@ int PlusDiagSearch(const array<array<int, 20>, 20>& input)
 	{
 		for (int column = 0; column < 17; ++column)
 		{
-			product = input[row][column]* input[row - 1][column + 1] * input[row - 2][column + 2] * input[row -3][column + 3];
+			product = input[row][column]* input[row - 1][column + 1] * input[row - 2][column + 2] * input[row -3][column + 3];		
+			if (product > maxProduct)
+			{
+				maxProduct = product;
+			}
 		}
-		if (product > maxProduct)
-			maxProduct = product;
+
 	}
 
 	return maxProduct;
@@ -129,9 +133,11 @@ int MinusDiagSearch(const array<array<int, 20>, 20>& input)
 		for (int column = 0; column < 17; ++column)
 		{
 			product = input[row][column] * input[row + 1][column + 1] * input[row + 2][column + 2] * input[row + 3][column + 3];
+			if (product > maxProduct)
+			{
+				maxProduct = product;
+			}
 		}
-		if (product > maxProduct)
-			maxProduct = product;
 	}
 	return maxProduct;
 }
@@ -144,9 +150,9 @@ int main()
 	array<array<int, 20>, 20>& input = inputArray;
 	ReadInput(input);
 	cout << RowSearch(input) << "\n";
-	cout << ColumnSearch(input) << "\n";
-	cout << MinusDiagSearch(input) << "\n";
+	cout << ColumnSearch(input) << "\n";	
 	cout << PlusDiagSearch(input) << "\n";
+	cout << MinusDiagSearch(input) << "\n";
 
 	auto endTime = chrono::system_clock::now();
 	auto runTime = chrono::duration_cast<chrono::milliseconds>(endTime - startTime).count();

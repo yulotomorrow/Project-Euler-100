@@ -39,6 +39,8 @@ int DistinctDivisorNum(int num, const vector<int>& prime)
 			}
 			++divisorNum;
 		}
+		else if (i == 1)
+			break;
 	}
 	return divisorNum;
 }
