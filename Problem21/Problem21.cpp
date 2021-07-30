@@ -13,7 +13,7 @@ void PrimeNumberV3(int upperLimit, vector<int>& prime)
 	{
 		for (auto& a : prime)
 		{
-			while (a <= checkLimit)
+			if (a <= checkLimit)
 			{
 				if (i % a == 0)
 				{
