@@ -1,0 +1,6 @@
+﻿  Problem97.cpp
+E:\my\Code\Project-Euler\Problem97\Problem97.cpp(13,28): warning C4244: 'initializing': conversion from 'double' to '__int64', possible loss of data
+E:\my\Code\Project-Euler\Problem97\Problem97.cpp(17,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem97\Problem97.cpp(17,20): warning C4244: 'initializing': conversion from 'double' to 'const int', possible loss of data
+E:\my\Code\Project-Euler\Problem97\Problem97.cpp(25,35): warning C4244: '*=': conversion from 'double' to '__int64', possible loss of data
+  Problem97.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem97.exe

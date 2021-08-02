@@ -1,0 +1,3 @@
+﻿  Problem46.cpp
+E:\my\Code\Project-Euler\Problem46\Problem46.cpp(34,22): warning C4244: 'argument': conversion from 'double' to 'const int', possible loss of data
+  Problem46.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem46.exe

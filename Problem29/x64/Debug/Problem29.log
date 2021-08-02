@@ -1,2 +1,5 @@
 ﻿  Problem29.cpp
+E:\my\Code\Project-Euler\Problem29\Problem29.cpp(30,46): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem29\Problem29.cpp(36,13): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem29\Problem29.cpp(46,22): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   Problem29.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem29.exe

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <array>
-#include <unordered_set>
+#include <set>
 #include <chrono>
 using namespace std;
 
@@ -23,64 +23,44 @@ void PrimeNumber(int upperLimit, vector<int>& prime)
 }
 
 // In this problem, only need to match divisor
-unordered_set<int> DivisorNum(int num, const vector<int>& prime)
+int PhiFunction(int num, const vector<int>& prime)
 {
 	int i = num;
-	unordered_set<int> divisors = {};
+	int phi = num;
+	set<int> divisors = {};
 	for (auto& a : prime)
-	{
-		if (i % a == 0)
+	{ 
+		bool isDivisor = false;
+		while (i % a == 0)
 		{
-			while (i % a == 0)
-			{
-				i = i / a;
-			}
+			i = i / a;
+			isDivisor = true;
+		}
+		if (isDivisor)
+		{
 			divisors.insert(a);
 		}
 	}
-	if (i < num) 
+	if (i != 1) 
 		divisors.insert(i);
-	return divisors;
-}
-
-// Really? Is it worthy?
-array<unordered_set<int>, 1000000> DivisorNumList(const vector<int>& prime) 
-{
-	array<unordered_set<int>, 1000000> divisorNumList = {};
-	for (int i =0; i < 1000000; ++i) 
+	for (auto& b : divisors)
 	{
-		divisorNumList[i] = DivisorNum(i, prime);
+		phi = phi / b;
+//		cout << phi <<" " << b << "\n";
+		phi *= (b - 1);		
 	}
-	return divisorNumList;
-}
-
-bool CompareDivisor(int num1, int num2, const vector<int>& prime) 
-{
-	const unordered_set<int> divisors1 = DivisorNum(num1, prime);
-	const unordered_set<int> divisors2 = DivisorNum(num2, prime);
-	for (auto& a : divisors1)
-	{
-		if (divisors2.find(a) != divisors2.end())
-			return true;
-	}
-	return false;
+	
+	return phi;
 }
 
 // Get rid of every not reduced fraction
 void ProperFractionCount(const vector<int>& prime)
 {
-	int fractionCount = 0;
-	int repeatFraction = 0;
-	for (int i = 2; i <= 1000000; ++i) 
+	long long fractionCount = 0;
+	const int limit = 1000000;
+	for (int i = 2; i <= limit; ++i) 
 	{
-		repeatFraction = 0;
-		for (int j = 1; j < i; ++j) 
-		{
-			if (CompareDivisor(i, j, prime))
-				++repeatFraction;
-		}
-		fractionCount = fractionCount + (i - 1) - repeatFraction;
-//		cout << fractionCount << "\n";
+		fractionCount += PhiFunction(i, prime);
 	}
 	cout << fractionCount << "\n";
 }

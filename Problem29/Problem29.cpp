@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <map>
+#include <unordered_set>
 #include <string>
 #include <chrono>
 using namespace std;
@@ -11,19 +11,44 @@ using namespace std;
 // 2-9^2, 2-4^3, 2-3^4, 2^5, 2^6, the key point is deal with 2, 4, 8, etc
 // Larger number lower power has been covered already, store the power and do 100 / power, don't need to know base
 
+int RepeatPower(int power) 
+{
+	unordered_set<int> distinguistTerms = {};
+	const int limit = 100;
+	for (int x = 2; x <= limit; ++x)
+	{
+		distinguistTerms.insert(x * power);
+	}
+	for (int i = power-1; i >= 1; --i) 
+	{
+		for (int j = 2; j <= limit; ++j)
+		{
+			if (distinguistTerms.find(i * j) != distinguistTerms.end())
+				distinguistTerms.erase(i * j);
+		}
+	}
+	return (limit - 1 - distinguistTerms.size());
+}
+
 void DistinguishPower() 
 {
-	int powers = 99 * 99;
-	for (int i = 2; i < 10; ++i) 
+	const int limit = 100;
+	int powers = pow((limit-1), 2);
+	unordered_set<int> bases = {};
+	for (int i = 2; i <= limit; ++i) 
 	{
-		vector<int> bases = {};
-		for (int j = 2; j <= 6; ++j) 
+		// Repeat calculating 4, 8, 9, get rid of it
+		if (bases.find(i) == bases.end())
 		{
-			if (pow(i, j) < 100)
+			for (int j = 2; j <= limit; ++j)
 			{
-				bases.push_back(j);
+				if (pow(i, j) <= limit) // 10 and 100
+				{
+					bases.insert(pow(i, j));
+					powers -= RepeatPower(j);
+//					cout << RepeatPower(j) << " " << j << "\n";
+				}
 			}
-//				powers -= (100 / j - 1);
 		}
 	}
 	cout << powers << "\n";
