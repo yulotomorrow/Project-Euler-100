@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <set>
+#include <array>
 #include <chrono>
 using namespace std;
 
@@ -69,11 +70,55 @@ void CoinProblem()
 	cout << result << "\n";
 }
 
+// Dynamic programming >_<
+
+int CoinRecursion()
+{
+	int max = 200;
+	array<int, 8> coinValue = { 1, 2, 5, 10, 20, 50, 100, 200 };
+	const int coinType = 8;
+	array<array<int, 201>, 9> storage = {};
+	for (int n = 0; n <= max; ++n)
+	{
+		if (n == 0)
+		{
+			for (int m = 0; m <= coinType; ++m)
+				storage[m][0] = 1;
+		}
+		else {
+			for (int m = 0; m <= coinType; ++m)
+			{
+				if (m == 0)
+					storage[m][n] = 0;
+				else
+				{
+					if (n - coinValue[m - 1] >= 0)
+					{
+						storage[m][n] = storage[m - 1][n] + storage[m][n - coinValue[m - 1]];
+//						cout << storage[m][n] << "\n";
+					}
+					else
+						storage[m][n] = storage[m - 1][n];
+				}
+			}
+		}
+	}
+	return storage[coinType][max];
+}
+
+void CoinProblemV2() 
+{
+	vector<int> coinValue = { 1, 2, 5, 10, 20, 50, 100, 200 };
+	int maxValue = 200;
+	int coinType = 8;
+
+}
+
 int main()
 {
 	auto startTime = chrono::system_clock::now();
 
-	CoinProblem();
+	cout << CoinRecursion() << "\n";
 
 	auto endTime = chrono::system_clock::now();
 	auto runTime = chrono::duration_cast<chrono::milliseconds>(endTime - startTime).count();
