@@ -14,6 +14,7 @@ using namespace std;
 // Odd num 1, 5, 7. To keep it dividable by 3, choose 3 even from 4, obviously get rid of 6
 // Then check permutation of possibilities, with 1 start, 7 end
 // Can we just print the answer directly giving so many conditions?
+
 void PretendFindingThePermute() 
 {
 	vector<int> oddList = {};
