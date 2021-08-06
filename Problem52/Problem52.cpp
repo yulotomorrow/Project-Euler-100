@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 #include <deque>
 #include <vector>
 #include <chrono>
@@ -58,12 +59,40 @@ void PretendPermuteSeven()
 	}
 }
 
+// Nevermind (will come back later), this problem is not a large scale one even with brute force...
+
+void SomeoneGiveUpTreatment() 
+{
+	for (int num = 100000; num < 1000000 / 6; ++num)
+	{
+		string numString = to_string(num);
+		sort(numString.begin(), numString.end());
+		bool isPermute = true;
+		for (int i = 2; i <= 6; ++i) 
+		{
+			isPermute = true;
+			string numStringMulti = to_string(num * i);
+			sort(numStringMulti.begin(), numStringMulti.end());
+			if (numString != numStringMulti)
+			{
+				isPermute = false;
+				break;
+			}
+		}
+		if (isPermute)
+		{
+			cout << num << "\n";
+			return;
+		}
+	}
+}
 
 int main()
 {
 	auto startTime = chrono::system_clock::now();
 
 	cout << 142857 << "\n"; // No don't
+	SomeoneGiveUpTreatment();
 
 	auto endTime = chrono::system_clock::now();
 	auto runTime = chrono::duration_cast<chrono::milliseconds>(endTime - startTime).count();

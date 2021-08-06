@@ -8,6 +8,7 @@ using namespace std;
 
 // Can I know if it's palindrome here in generation?
 
+// iterator of string points to char, need to convert
 array<string, 2> BigIntSum(string num1, string num2)
 {
 	string sumResult = "";
@@ -18,10 +19,10 @@ array<string, 2> BigIntSum(string num1, string num2)
 	int additional = 0;
 	while (itr1 != num1.crend() && itr2 != num2.crend())
 	{
-		int newDigit = (*itr1 + *itr2 + additional) % 10;
+		int newDigit = (((*itr1) - '0') + ((*itr2) - '0') + additional) % 10;
 		sumResult = to_string(newDigit)+ sumResult;
 		palindromeResult = palindromeResult + to_string(newDigit);
-		additional = (*itr1 + *itr2 + additional) / 10;
+		additional = (((*itr1) - '0') + ((*itr2) - '0') + additional) / 10;
 		++itr1;
 		++itr2;
 	}
@@ -64,6 +65,7 @@ void LychrelCheck()
 			array<string, 2> temp = BigIntSum(numString, palindrome);
 			numString = temp[0];
 			palindrome = temp[1];
+//			cout << numString << "\n";
 			if (numString == palindrome)
 			{
 				isLychrel = false;
