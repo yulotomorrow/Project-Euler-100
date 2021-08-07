@@ -86,6 +86,42 @@ void FindPerfectTriGroup(const set<int>& prime)
 	cout << mostGroup << " "<< solutionNum << "\n";
 }
 
+void FindPerfectTriGroupV2(const set<int>& prime)
+{
+	int solutionNum = 0;
+	int mostGroup = 0;
+	set<int> minimumTri = {};
+	const int limit2 = 1500000;
+	int triBound = (int)sqrt(limit2) + 2;
+	for (int m = 3; m <= triBound; m += 2)
+	{
+		for (int n = 1; n < m; n += 2)
+		{
+			if (minimumTri.find((m * (m + n))) == minimumTri.end() && IsCoprime(m, n, prime)) {
+				minimumTri.insert((m * (m + n)));
+//				cout << (m * (m + n)) << "\n";
+			}
+		}
+	}
+	for (int p = 12; p <= limit2; ++p)
+	{
+		int solution = 0;
+		for (auto& a : minimumTri)
+		{
+			if (p % a == 0)
+			{
+				++solution;
+			}
+		}
+		if (solution == 1)
+		{
+			++solutionNum;
+			//			cout << mostGroup << " " << solutionNum << "\n";
+		}
+	}
+	cout << solutionNum << "\n";
+}
+
 // there are non-minimal but only one way triangle
 
 void FindSingleTriGroup(const set<int>& prime)
@@ -101,26 +137,40 @@ void FindSingleTriGroup(const set<int>& prime)
 	{
 		for (int n = 1; n < m; n += 2)
 		{
-			if (minimumTri.find((m * (m + n))) == minimumTri.end() && IsCoprime(m, n, prime) && (m * (m + n)) < triBound2) {
-				minimumTri.insert((m * (m + n)));
-				++totalNum;
-//				cout << (m * (m + n)) << "\n";
+			if ((m * (m + n)) <= limit2 && IsCoprime(m, n, prime))
+			{
+				if (minimumTri.find((m * (m + n))) == minimumTri.end())
+				{
+					minimumTri.insert((m * (m + n)));
+//					++totalNum;
+					//				cout << (m * (m + n)) << "\n";
+				}
+				else
+					repeat.insert((m * (m + n)));
 			}
 		}
 	}
 	for (auto element : minimumTri)
 	{
-		for (int k = 2; k <= (limit2 / element); ++k)
+		for (int k = 1; k <= (limit2 / element); ++k)
 		{
-			if (minimumTri.find(k * element) != minimumTri.end()) 
+			int solution = 0;
+			for (auto& a : minimumTri)
 			{
-				repeat.insert(k * element);
+				if ((k * element ) % a == 0)
+				{
+					++solution;
+				}
 			}
-			else
-				notMinimum.insert(k * element);
+			if (solution == 1)
+			{
+				++solutionNum;
+				//			cout << mostGroup << " " << solutionNum << "\n";
+			}
 		}
 	}
-	cout << minimumTri.size() + notMinimum.size() - repeat.size() << "\n";
+//	cout << minimumTri.size() + notMinimum.size() - repeat.size() << "\n";
+	cout << solutionNum << "\n";
 }
 
 int main()
@@ -132,6 +182,7 @@ int main()
 //	FindPerfectTriGroup(prime);
 	// Problem 75
 	FindSingleTriGroup(prime);
+//	FindPerfectTriGroupV2(prime);
 
 	auto endTime = chrono::system_clock::now();
 	auto runTime = chrono::duration_cast<chrono::milliseconds>(endTime - startTime).count();
