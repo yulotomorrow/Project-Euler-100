@@ -1,0 +1,10 @@
+﻿  Problem78.cpp
+E:\my\Code\Project-Euler\Problem78\Problem78.cpp(16,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem78\Problem78.cpp(17,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem78\Problem78.cpp(28,14): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Generating code
+  3 of 22 functions (13.6%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Problem78.vcxproj -> E:\my\Code\Project-Euler\x64\Release\Problem78.exe
