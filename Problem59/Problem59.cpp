@@ -16,17 +16,21 @@ int XOROperation(int text, int cipher)
 	string binaryText = bitset<8>(text).to_string();
 	string binaryCipher = bitset<8>(cipher).to_string();
 	string binaryConvert = "";
-	for (int i = 0; i < 8; ++i) 
+	int binaryValue = 0;
+	for (int i = 0; i < 8; ++i)
 	{
-		binaryConvert = binaryConvert + to_string(((binaryText[i] - '0') + (binaryCipher[i] - '0')) % 2);
+		//binaryConvert = binaryConvert + to_string(((binaryText[i] - '0') + (binaryCipher[i] - '0')) % 2);
+		binaryValue += pow(2, i) * ((text % 2 + cipher % 2) % 2);
+		text /= 2;
+		cipher /= 2;
 	}
-	return stoi(binaryConvert, 0, 2);
+	return binaryValue;
 }
 
 bool ValidCipher(int text, int cipher)
 {
 	int target = XOROperation(text, cipher);
-	if ((target >= 65 && target <= 90) || (target >= 97 && target <= 122)) //
+	if ((target >= 32 && target <= 122)) //(target >= 65 && target <= 90) || (target >= 97 && target <= 122)
 		return true;
 	else
 		return false;
@@ -61,7 +65,7 @@ array<int, 3> InputProcess(string line, set<int> cipher, vector<int>& charas)
 						cipher3.erase(a);
 				}
 			}
-			charas.push_back(dex);
+			charas.push_back(dex); 
 			num = "";
 			++charaNum;
 		}
@@ -79,13 +83,13 @@ array<int, 3> InputProcess(string line, set<int> cipher, vector<int>& charas)
 				cipher3.erase(a);
 		}
 	}
-	charas.push_back(dex);
+	charas.push_back(dex); 
 
-//	if (cipher1.size() == 1)
+	if (cipher1.size() == 1)
 		ciphers[0] = *(cipher1.begin());
-//	if (cipher2.size() == 1)
+	if (cipher2.size() == 1)
 		ciphers[1] = *(cipher2.begin());
-//	if (cipher3.size() == 1)
+	if (cipher3.size() == 1)
 		ciphers[2] = *(cipher3.begin());
 	return ciphers;
 }

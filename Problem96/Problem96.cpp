@@ -7,14 +7,8 @@
 #include <chrono>
 using namespace std;
 
-// Sadly, my previous versions of Sodoku solvers are not fast enoough, need to develop version 3 here.
-
-void SingleValueSearching()
-{
-
-}
-
-//half-backtrack, at this step unfilledList and possible choice list will be fixed.
+// I didn't optimize it, sorry...
+// half-backtrack, at this step unfilledList and possible choice list will be fixed.
 void BacktrackFilling(set<int> unfilled, array<int, 81>& currentNums, array<array<int, 20>, 81> neighbors,
 	array<set<int>, 81>& possNums)
 {
@@ -47,7 +41,7 @@ void BacktrackFilling(set<int> unfilled, array<int, 81>& currentNums, array<arra
 		}
 		++unfillItr;
 	}
-	cout << "finish" << "\n";
+//	cout << "finish" << "\n";
 }
 
 array<int, 3> DigitSignature(const int i)
@@ -110,7 +104,10 @@ int SodokuCalculation(set<int> unfill, array<int, 81>& currentNums, const array<
 {
 	int threeDigitNum = 0;
 	if (unfill.size() == 0)
+	{
+		cout << "unfill" << "\n";
 		return 0;
+	}
 	else 
 	{
 		BacktrackFilling(unfill, currentNums, neighbors, possNums);
@@ -120,10 +117,10 @@ int SodokuCalculation(set<int> unfill, array<int, 81>& currentNums, const array<
 }
 
 int InputProcess(string line, int& charaCount, int& lineCount, array<array<int, 20>, 81> neighbors,
-	array<int, 81>& initialNums, array<set<int>, 81>& possNums)
+	array<int, 81>& initialNums, array<set<int>, 81>& possNums, set<int>& unfill)
 {
 	int sum = 0;
-	set<int> unfilledCoord = {};
+	
 	set<int> initialP{ 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
 	for (auto& chara : line)
@@ -133,6 +130,7 @@ int InputProcess(string line, int& charaCount, int& lineCount, array<array<int, 
 			initialNums = { 0 };
 			charaCount = 0;
 			lineCount = 0;
+			unfill = {};
 			fill(possNums.begin(), possNums.end(), initialP);
 			return 0;
 		}
@@ -142,7 +140,7 @@ int InputProcess(string line, int& charaCount, int& lineCount, array<array<int, 
 			initialNums[charaCount] = charaValue;
 			if (charaValue == 0)
 			{
-				unfilledCoord.insert(charaCount);
+				unfill.insert(charaCount);
 			}
 			else
 			{
@@ -151,13 +149,12 @@ int InputProcess(string line, int& charaCount, int& lineCount, array<array<int, 
 			}
 			++charaCount;			
 		}
-
 	}		
 	++lineCount;
-	cout << lineCount << "\n";
+//	cout << lineCount << "\n";
 	if (lineCount == 9)
 	{
-		sum = SodokuCalculation(unfilledCoord, initialNums, neighbors, possNums);
+		sum = SodokuCalculation(unfill, initialNums, neighbors, possNums);
 		cout << sum << "\n";
 	}
 	return sum;
@@ -171,7 +168,9 @@ void ReadInput(array<int, 81>& initialNums, array<array<int, 20>, 81> neighbors)
 	int lineNum = 0;
 	int charas = 0;
 	int& charaCount = charas;
-	int& lineCount = lineNum;
+	int& lineCount = lineNum; 
+	set<int> unfilledCoord = {};
+	set<int>& unfill = unfilledCoord;
 	int sum = 0;
 
 	set<int> initialP{ 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -181,11 +180,11 @@ void ReadInput(array<int, 81>& initialNums, array<array<int, 20>, 81> neighbors)
 
 	while (getline(fs, line))
 	{
-		sum += InputProcess(line, charaCount, lineCount, neighbors, initialNums, possNums);
+		sum += InputProcess(line, charaCount, lineCount, neighbors, initialNums, possNums, unfill);
 //		cout << charas << "\n";
 	}
 	fs.close();
-	cout << sum << "\n";
+//	cout << sum << "\n";
 }
 
 int main()
