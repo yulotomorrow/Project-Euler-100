@@ -1,0 +1,12 @@
+﻿  Problem64.cpp
+E:\my\Code\Project-Euler\Problem64\Problem64.cpp(26,24): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+E:\my\Code\Project-Euler\Problem64\Problem64.cpp(37,25): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+  Problem64.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem64.exe

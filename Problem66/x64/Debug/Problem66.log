@@ -1,0 +1,6 @@
+﻿  Problem66.cpp
+E:\my\Code\Project-Euler\Problem66\Problem66.cpp(107,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem66\Problem66.cpp(108,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem66\Problem66.cpp(120,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem66\Problem66.cpp(121,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Problem66.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem66.exe
