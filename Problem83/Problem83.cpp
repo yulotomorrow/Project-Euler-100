@@ -7,8 +7,6 @@
 #include <chrono>
 using namespace std;
 
-// Now it's a different way to go from bottom to top, but still similar to prooblem 18
-
 void InputProcess(string line, int lineNum, vector<vector<int>>& input)
 {
 	string num = "";
@@ -48,23 +46,71 @@ void ReadInput(vector<vector<int>>& input)
 
 // Okay, now we need some SERIOUS shortest path algorithms...
 
+array<int, 2> FindCurrentMinimum(const vector<vector<int>> inputCopy, const vector<vector<bool>> canVisit)
+{
+	int bound = 80;
+	int min = 1e8;
+	array<int, 2> coord = { 0,0 };
+	for (int i = 0; i < bound; ++i) 
+	{
+		for (int j = 0; j < bound; ++j)
+		{
+			if (inputCopy[i][j] < min && canVisit[i][j]) 
+			{
+				coord = { i, j };
+				min = inputCopy[i][j];
+			}
+		}
+	}
+	return coord;
+}
+
+void MinOverwrite(vector<vector<int>>& inputArr, const vector<vector<int>>& input, 
+	const vector<vector<bool>> canVisit, int r, int c, int compareVal)
+{
+	if (inputArr[r][c] > compareVal && canVisit[r][c])
+		inputArr[r][c] = compareVal;
+}
+
 void FindMinPathSum4Dir(vector<vector<int>>& input)
 {
 	int bound = 80;
 	int initial = 1e8;
 	vector<vector<int>> inputCopy(bound, vector<int>(bound, initial));
+	vector<vector<int>>& inputArr = inputCopy;
+	vector<vector<bool>> canVisit(bound, vector<bool>(bound, true));
 	multimap<int, array<int, 2>> pairs = {};
-	for (int diag = 0; diag < 2 * bound - 1; ++diag)
+	inputCopy[0][0] = 0;
+	for (int a = 1; a <= pow(bound, 2); ++a)
 	{
-		for (int col = 0; col < bound; ++col) 
+		array<int, 2> coord = FindCurrentMinimum(inputCopy, canVisit);
+		int row = coord[0];
+		int col = coord[1];
+		if (row < bound - 1) 
 		{
-			int row = diag - col;
-			if (row >= bound || row < 0)
-				break;
+			if (inputArr[row + 1][col] > (inputArr[row][col] + input[row][col]) && canVisit[row + 1][col])
+				inputArr[row + 1][col] = (inputArr[row][col] + input[row][col]);
 		}
-	}
+		if (row > 0)
+		{
+			if (inputArr[row - 1][col] > (inputArr[row][col] + input[row][col]) && canVisit[row - 1][col])
+				inputArr[row - 1][col] = (inputArr[row][col] + input[row][col]);
+		}
+		if (col < bound - 1)
+		{
+			if (inputArr[row ][col+ 1] > (inputArr[row][col] + input[row][col]) && canVisit[row][col + 1])
+				inputArr[row ][col+ 1] = (inputArr[row][col] + input[row][col]);
+		}
+		if (col > 0)
+		{
+			if (inputArr[row][col - 1] > (inputArr[row][col] + input[row][col]) && canVisit[row][col - 1])
+				inputArr[row][col - 1] = (inputArr[row][col] + input[row][col]);
+		}
 
-	cout << inputCopy[bound-1][bound-1] << "\n";
+		canVisit[row][col] = false;
+	}
+	// The last element is not in the path, add it.
+	cout << inputCopy[bound-1][bound-1] + input[bound - 1][bound - 1] << "\n";
 }
 
 int main()

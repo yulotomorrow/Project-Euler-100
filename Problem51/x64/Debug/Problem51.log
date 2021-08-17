@@ -1,0 +1,6 @@
+﻿  Problem51.cpp
+E:\my\Code\Project-Euler\Problem51\Problem51.cpp(83,42): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem51\Problem51.cpp(92,37): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem51\Problem51.cpp(138,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem51\Problem51.cpp(147,37): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  Problem51.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem51.exe

@@ -1,0 +1,4 @@
+﻿  Problem98.cpp
+E:\my\Code\Project-Euler\Problem98\Problem98.cpp(65,34): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem98\Problem98.cpp(68,14): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Problem98.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem98.exe
