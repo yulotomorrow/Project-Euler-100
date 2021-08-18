@@ -30,7 +30,9 @@ int XOROperation(int text, int cipher)
 bool ValidCipher(int text, int cipher)
 {
 	int target = XOROperation(text, cipher);
-	if ((target >= 32 && target <= 122)) //(target >= 65 && target <= 90) || (target >= 97 && target <= 122)
+	// Just include everything except number 96 in ascii and it's done??? I'm actually GUESSING WHAT THE TEXT IS CONSIST OF?
+	if ((target >= 65 && target <= 90) || (target >= 97 && target <= 122) 
+		|| (target >= 32 && target <= 64) || (target >= 91 && target <= 95)) //(target >= 65 && target <= 90) || (target >= 97 && target <= 122)
 		return true;
 	else
 		return false;
@@ -84,7 +86,7 @@ array<int, 3> InputProcess(string line, set<int> cipher, vector<int>& charas)
 		}
 	}
 	charas.push_back(dex); 
-
+// Aw, we are lucky here we get unique solution and we don't need word frequency checking...
 	if (cipher1.size() == 1)
 		ciphers[0] = *(cipher1.begin());
 	if (cipher2.size() == 1)

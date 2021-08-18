@@ -1,0 +1,10 @@
+﻿  Problem60.cpp
+E:\my\Code\Project-Euler\Problem60\Problem60.cpp(68,39): warning C4244: 'argument': conversion from 'double' to '__int64', possible loss of data
+E:\my\Code\Project-Euler\Problem60\Problem60.cpp(69,41): warning C4244: 'argument': conversion from 'double' to '__int64', possible loss of data
+E:\my\Code\Project-Euler\Problem60\Problem60.cpp(87,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Generating code
+  2 of 209 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Problem60.vcxproj -> E:\my\Code\Project-Euler\x64\Release\Problem60.exe
