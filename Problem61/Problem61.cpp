@@ -9,11 +9,12 @@ using namespace std;
 
 // Generating every possible numbers and which figure number it is, there will defenitely be repeating so use multimap.
 // Multimap is sorted so easier to just search in a range.
+// I'm crying... First time encountering a problem I know the method but I don't know how to write the code... :(
 
 multimap<int, int> FigureNums() 
 {
 	multimap<int, int> figureNums = {};
-	for (int n = sqrt(2000) - 1; n < sqrt(20000) + 1; ++n)
+	for (int n = 1; n < 200; ++n)//(int n = sqrt(2000) - 1; n < sqrt(20000) + 1; ++n)
 	{
 		int tri = (n * (n + 1)) / 2;
 		int sqr = n * n;
@@ -37,79 +38,101 @@ multimap<int, int> FigureNums()
 	return figureNums;
 }
 
-/*
+
+bool CyclicalFN(const multimap<int, int>& figureNums, set<int>& groupNum, int& resultSum,
+	int lowBound, int upBound, int& refNum, int prevNum, int step)
+{
+	if (step <= 1)
+		return true;
+	for (auto itr = figureNums.lower_bound(lowBound); itr != figureNums.upper_bound(upBound); ++itr)
+	{
+		int index = itr->second;
+		if (groupNum.find(index) == groupNum.end())
+		{			
+			int value = itr->first;
+			int lowBound2 = (value % 100) * 100;
+			int upBound2 = (value % 100 + 1) * 100 - 1;				
+			groupNum.insert(index);		
+			resultSum += value;
+			refNum = value; // write the innermost value last
+
+			if (lowBound2 < 1000 || !CyclicalFN(figureNums, groupNum, resultSum, lowBound2, upBound2, refNum, prevNum, step - 1))
+			{
+				groupNum.erase(index);
+				resultSum -= value;
+			}		
+			else if (step == 2 && refNum % 100 != prevNum / 100)
+			{
+				groupNum.erase(index);
+				resultSum -= value;
+			}
+			else
+			{				
+				return true;
+			}				
+		}
+	}
+	return false;
+}
+
+
 void CyclicalFigureNum(const multimap<int, int> figureNums)
 {	
 	for (int m = 19; m < 59; ++m)
 	{
 		int prevNum = m * (3 * m - 2);
 		int lowBound = (prevNum % 100) * 100;
-		int upBound = (prevNum % 100 + 1) * 100;
-		set<int> groupNum = {};
+		int upBound = (prevNum % 100 + 1) * 100 - 1;
+		set<int> groupNums = {};
+		set<int>& groupNum = groupNums;
 		groupNum.insert(8);		
-		for (int count = 1; count <= 6; ++count) 
+		int result = prevNum;
+		int& resultSum = result;
+		bool endNum = false;
+		int ref = 0;
+		int& refNum = ref;
+		if (lowBound >= 1000 && upBound >= 1000)
+			endNum = CyclicalFN(figureNums, groupNum, resultSum, lowBound, upBound, refNum, prevNum, 6);
+		if (endNum && refNum % 100 == prevNum / 100)
 		{
-			auto itr = figureNums.lower_bound(lowBound);
-			while (itr != figureNums.upper_bound(upBound)) 
-			{
-				prevNum = itr->first;
-			}
+			cout << prevNum << " " << resultSum << "\n";
+			return; // This version there will only be one solution
 		}
 	}
 }
-*/
 
-array<int, 4> CyclicalFN(const multimap<int, int> figureNums, set<int>& groupNum, int& resultSum, int layer)
+void CyclicalFigureNumV2(const multimap<int, int>& figureNums)
 {
-	if (layer > 0)
+	for (auto &a : figureNums)
 	{
-		array<int, 4> target = CyclicalFN(figureNums, groupNum, resultSum, layer - 1);
-		int prevNum = target[0];
-		int index = target[1];
+		int prevNum = a.first;
 		int lowBound = (prevNum % 100) * 100;
-		int upBound = (prevNum % 100 + 1) * 100;	
-		
-		if (groupNum.find(index) != groupNum.end()) 
+		int upBound = (prevNum % 100 + 1) * 100 - 1;
+		set<int> groupNums = {};
+		set<int>& groupNum = groupNums;
+		groupNum.insert(a.second);
+		int result = prevNum;
+		int& resultSum = result;
+		bool endNum = false;
+		int ref = 0;
+		int& refNum = ref;
+		if (lowBound >= 1000 && upBound >= 1000)
+			endNum = CyclicalFN(figureNums, groupNum, resultSum, lowBound, upBound, refNum, prevNum, 6);
+		if (endNum && refNum % 100 == prevNum / 100)
 		{
-			groupNum.insert(index);
-			// add the result to sum
-		}
-		else
-		{
-			// backtrack
-		}
-		// The range of the next loop is decided by the previous, by up and low bound in multimap
-
-	}
-	else 
-	{
-		groupNum = {};
-		// The first loop is diffrernt
-		for (int m = 19; m < 59; ++m)
-		{
-			int prevNum = m * (3 * m - 2);
-			int lowBound = (prevNum % 100) * 100;
-			int upBound = (prevNum % 100 + 1) * 100;
-			groupNum.insert(8);
-			
-			return { prevNum, 8, lowBound, upBound };
+			cout << prevNum <<" "<< a.second <<" " <<resultSum<< "\n";
+			return; // Now that it's correct, I can make sure the 6 values are equavalent
 		}
 	}
-
 }
-
 
 int main()
 {
 	auto startTime = chrono::system_clock::now();
 
 	multimap<int, int> figNums = FigureNums();
-	set<int> figIndex = {};
-	set<int>& groupNum = figIndex;
-	int result = 0;
-	int& resultSum = result;
-	CyclicalFN(figNums, groupNum, resultSum, 6-1);
-	cout << result << "\n";
+	multimap<int, int>& figureNums = figNums;
+	CyclicalFigureNum(figureNums);
 
 	auto endTime = chrono::system_clock::now();
 	auto runTime = chrono::duration_cast<chrono::milliseconds>(endTime - startTime).count();
