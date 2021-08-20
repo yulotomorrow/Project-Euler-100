@@ -1,0 +1,10 @@
+﻿  Problem86.cpp
+E:\my\Code\Project-Euler\Problem86\Problem86.cpp(17,30): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem86\Problem86.cpp(25,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem86\Problem86.cpp(32,37): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  Generating code
+  8 of 23 functions (34.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Problem86.vcxproj -> E:\my\Code\Project-Euler\x64\Release\Problem86.exe

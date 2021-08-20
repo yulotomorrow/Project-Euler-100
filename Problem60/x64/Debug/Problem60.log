@@ -2,6 +2,5 @@
 E:\my\Code\Project-Euler\Problem60\Problem60.cpp(68,39): warning C4244: 'argument': conversion from 'double' to '__int64', possible loss of data
 E:\my\Code\Project-Euler\Problem60\Problem60.cpp(69,41): warning C4244: 'argument': conversion from 'double' to '__int64', possible loss of data
 E:\my\Code\Project-Euler\Problem60\Problem60.cpp(87,18): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-E:\my\Code\Project-Euler\Problem60\Problem60.cpp(103,21): warning C4244: 'initializing': conversion from 'double' to '__int64', possible loss of data
-E:\my\Code\Project-Euler\Problem60\Problem60.cpp(104,21): warning C4244: 'initializing': conversion from 'double' to '__int64', possible loss of data
+E:\my\Code\Project-Euler\Problem60\Problem60.cpp(186,22): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   Problem60.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem60.exe

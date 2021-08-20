@@ -1,5 +1,6 @@
 #include <iostream>
 #include <set>
+#include <map>
 #include <string>
 #include <array>
 #include <vector>
@@ -47,6 +48,20 @@ bool IsCoprime(int a, int b, const set<int>& prime)
 			break;
 	}
 	return true;
+}
+
+bool IsCoprime(int a, int b)
+{
+	while (a % b != 0)
+	{
+		int temp = b;
+		b = a - b * (a / b);
+		a = temp;
+	}
+	if (b == 1)
+		return true;
+	else
+		return false;
 }
 
 void FindPerfectTriGroup(const set<int>& prime)
@@ -124,64 +139,77 @@ void FindPerfectTriGroupV2(const set<int>& prime)
 
 // there are non-minimal but only one way triangle
 
-void FindSingleTriGroup(const set<int>& prime)
+void FindSingleTriGroup()
 {
 	int solutionNum = 0;
-	set<int> minimumTri = {};
-	set<int> notMinimum = {};
-	set<int> repeat = {};
+	map<int, int> minimumTri = {};
 	const int limit2 = 1500000;
 	int triBound2 = (int)sqrt(limit2) + 2;
-	int totalNum = 0;
 	for (int m = 3; m <= triBound2; m += 2)
 	{
 		for (int n = 1; n < m; n += 2)
 		{
-			if ((m * (m + n)) <= limit2 && IsCoprime(m, n, prime))
+			int perimeter = m * (m + n);
+			if (perimeter <= limit2 && IsCoprime(m, n))
 			{
-				if (minimumTri.find((m * (m + n))) == minimumTri.end())
+				for (int k = 1; k <= limit2 / perimeter; ++k)
 				{
-					minimumTri.insert((m * (m + n)));
-//					++totalNum;
-					//				cout << (m * (m + n)) << "\n";
+					if (k * perimeter <= limit2)
+					{
+						if (minimumTri.find(k * perimeter) == minimumTri.end())
+						{
+							minimumTri[k * perimeter] = 1;
+						}
+						else
+						{
+							++minimumTri[k * perimeter];
+						}
+					}
 				}
-				else
-					repeat.insert((m * (m + n)));
 			}
 		}
 	}
 	for (auto element : minimumTri)
 	{
-		for (int k = 1; k <= (limit2 / element); ++k)
+		if (element.second == 1)
+			++solutionNum;
+	}
+	cout << solutionNum << "\n";
+}
+
+void FindSingleTriGroupV2()
+{
+	int solutionNum = 0;
+	map<int, int> minimumTri = {};
+	const int limit2 = 1500000;
+	int triBound2 = (int)sqrt(limit2) + 2;
+	for (int m = 2; m <= triBound2; ++m)
+	{
+		for (int n = 1; n < m; ++n)
 		{
-			int solution = 0;
-			for (auto& a : minimumTri)
+			int perimeter = 2 * m * (m + n);
+			if (perimeter <= limit2 && (m*n) % 2 == 0 && IsCoprime(m, n))
 			{
-				if ((k * element ) % a == 0)
-				{
-					++solution;
-				}
-			}
-			if (solution == 1)
-			{
-				++solutionNum;
-				//			cout << mostGroup << " " << solutionNum << "\n";
+				 solutionNum += limit2 / perimeter;
 			}
 		}
 	}
-//	cout << minimumTri.size() + notMinimum.size() - repeat.size() << "\n";
 	cout << solutionNum << "\n";
 }
+
 
 int main()
 {
 	auto startTime = chrono::system_clock::now();
+
 	// Problem 39
 	set<int> primeList = {};
 	set<int>& prime = primeList;
 //	FindPerfectTriGroup(prime);
+ 
 	// Problem 75
-	FindSingleTriGroup(prime);
+	FindSingleTriGroup();
+//	FindSingleTriGroupV2();
 //	FindPerfectTriGroupV2(prime);
 
 	auto endTime = chrono::system_clock::now();

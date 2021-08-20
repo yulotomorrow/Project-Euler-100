@@ -87,17 +87,18 @@ void FindPrimeList(const set<int>& prime)
 	int minPrimeSum = 1e9;
 	int initialNum = 3;
 	// I'm changing bound accrording to intermidiate answers
-	while (initialNum < 2.2e4)
+	for (auto& initialNum : prime)
 	{
-		while (!CheckPrime(initialNum, prime))
-			++initialNum;
-		primeSum = 0;
-		fivePrimes = { };
-		for (int num = initialNum; num < 1.1e5; ++num)
+		for (int num = initialNum; num < 1e4; ++num)
 		{			
 			if (CheckPrime(num, prime))
 			{
 				bool isPrime = true;
+				if (fivePrimes.size() == 0)
+				{
+					fivePrimes.push_back(num);
+					primeSum = num;
+				}
 				for (auto& a : fivePrimes)
 				{
 					long long num1 = (long long)a + (long long)num * (long long)pow(10, (int)log10(a) + 1);
@@ -117,25 +118,76 @@ void FindPrimeList(const set<int>& prime)
 					if (primeSum < minPrimeSum)
 					{
 						minPrimeSum = primeSum;
-						cout << minPrimeSum << " " << fivePrimes[0] << " " << fivePrimes[4] << "\n";
+						cout << minPrimeSum << " " << fivePrimes[0] << " " << fivePrimes[3] << "\n";
 					}
 					break;
 				}
 			}
 		}
-		++initialNum;
 	}
 	cout << minPrimeSum << "\n";
+}
+
+// This problem is actually backtracking! There are cases the last method fail to cinsider
+// I used 1e4 as boundary to try
+bool FindPrimeRecursive(const set<int>& prime, vector<int>& fivePrimes, int& minPrimeSum, int& primeSum)
+{
+	if (fivePrimes.size() == 5)
+	{
+		if (primeSum < minPrimeSum)
+		{
+			minPrimeSum = primeSum;
+		}
+		fivePrimes = {};
+		primeSum = 0;
+		return true;
+	}
+	for (auto& num : prime)
+	{
+		bool isPrime = true;
+		for (auto& a : fivePrimes)
+		{
+			long long num1 = (long long)a + (long long)num * (long long)pow(10, (int)log10(a) + 1);
+			long long num2 = (long long)num + (long long)a * (long long)pow(10, (int)log10(num) + 1);
+			isPrime = isPrime && CheckPrime(num1, prime);
+			isPrime = isPrime && CheckPrime(num2, prime);
+			if (!isPrime)
+				break;
+		}
+		if (isPrime)
+		{
+			fivePrimes.push_back(num);
+			primeSum += num;
+			if (FindPrimeRecursive(prime, fivePrimes, minPrimeSum, primeSum))
+			{
+				return true;
+			}
+			else 
+			{
+				fivePrimes.pop_back();
+				primeSum -= num;
+			}
+		}
+	}
+	return false;
 }
 
 int main()
 {
 	auto startTime = chrono::system_clock::now();
 
-	set<int> primeList;
+	set<int> primeList = {};
 	set<int>& prime = primeList;
-	PrimeNumber(1000000, prime);
-	FindPrimeList(prime);
+	PrimeNumber(10000, prime);
+//	FindPrimeList(prime);
+	vector<int> fivePrimelist = { };
+	vector<int>& fivePrimes = fivePrimelist;
+	int primesSum = 0;
+	int& primeSum = primesSum;
+	int minimumPrimeSum = 1e9;
+	int& minPrimeSum = minimumPrimeSum;
+	FindPrimeRecursive(prime, fivePrimes, minPrimeSum, primeSum);
+	cout << minPrimeSum << "\n";
 
 	auto endTime = chrono::system_clock::now();
 	auto runTime = chrono::duration_cast<chrono::milliseconds>(endTime - startTime).count();

@@ -1,7 +1,7 @@
 ﻿  Problem39.cpp
   Generating code
-  2 of 138 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
+  107 of 182 functions (58.8%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    7 functions had inline decision re-evaluated but remain unchanged
+    10 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Problem39.vcxproj -> E:\my\Code\Project-Euler\x64\Release\Problem39_75.exe
