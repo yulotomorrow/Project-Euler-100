@@ -1,0 +1,19 @@
+﻿  Problem84.cpp
+E:\my\Code\Project-Euler\Problem84\Problem84.cpp(73,17): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+E:\my\Code\Project-Euler\Problem84\Problem84.cpp(76,17): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+E:\my\Code\Project-Euler\Problem84\Problem84.cpp(114,9): warning C4834: discarding return value of function with 'nodiscard' attribute
+E:\my\Code\Project-Euler\Problem84\Problem84.cpp(116,9): warning C4834: discarding return value of function with 'nodiscard' attribute
+  Generating code
+  6 of 157 functions ( 3.8%) were compiled, the rest were copied from previous compilation.
+    4 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Problem84.vcxproj -> E:\my\Code\Project-Euler\x64\Release\Problem84.exe

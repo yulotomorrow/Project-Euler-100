@@ -98,12 +98,14 @@ void FindCubePair()
 			{
 				c /= 2.0;
 			}
-			combPair += IsCubePair(comb1, comb2) ? c : 0;
+			// They said 6 and 9 are still distinguishable, so the previous steps can be skipped and count directly
+			combPair += IsCubePair(comb1, comb2) ? 1 : 0;
 			comb2 = NextCombinationC10_6(comb2);
 		}
 		comb1 = NextCombinationC10_6(comb1);
 	}
-	cout << combPair << "\n";
+	// Just divide 2 here to get rid of repeating
+	cout << combPair/2.0 << "\n";
 }
 
 int main()

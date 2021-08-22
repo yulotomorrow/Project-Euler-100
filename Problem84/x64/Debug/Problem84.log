@@ -1,0 +1,12 @@
+﻿  Problem84.cpp
+E:\my\Code\Project-Euler\Problem84\Problem84.cpp(73,17): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+E:\my\Code\Project-Euler\Problem84\Problem84.cpp(76,17): warning C4244: 'initializing': conversion from '_Rep' to 'unsigned int', possible loss of data
+          with
+          [
+              _Rep=std::chrono::system_clock::rep
+          ]
+  Problem84.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem84.exe

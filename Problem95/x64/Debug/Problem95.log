@@ -1,0 +1,4 @@
+﻿  Problem95.cpp
+E:\my\Code\Project-Euler\Problem95\Problem95.cpp(23,17): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem95\Problem95.cpp(47,20): warning C4244: 'initializing': conversion from '__int64' to 'int', possible loss of data
+  Problem95.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem95.exe
