@@ -1,0 +1,3 @@
+﻿  Problem80.cpp
+E:\my\Code\Project-Euler\Problem80\Problem80.cpp(25,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Problem80.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem80.exe

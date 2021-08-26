@@ -1,0 +1,6 @@
+﻿  BigIntCalculation.cpp
+E:\my\Code\Project-Euler\ProjectEulerFunctions\BigIntCalculation.cpp(13,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  PrimeNumber.cpp
+  ProjectEulerFunctions.cpp
+  Generating Code...
+  ProjectEulerFunctions.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\ProjectEulerFunctions.exe

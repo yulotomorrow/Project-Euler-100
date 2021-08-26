@@ -1,0 +1,4 @@
+﻿  Problem93.cpp
+E:\my\Code\Project-Euler\Problem93\Problem93.cpp(64,15): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+E:\my\Code\Project-Euler\Problem93\Problem93.cpp(57): warning C4715: 'Operations': not all control paths return a value
+  Problem93.vcxproj -> E:\my\Code\Project-Euler\x64\Debug\Problem93.exe

@@ -1,0 +1,17 @@
+﻿  Problem88.cpp
+E:\my\Code\Project-Euler\Problem88\Problem88.cpp(173,41): warning C4838: conversion from 'double' to '_Ty' requires a narrowing conversion
+          with
+          [
+              _Ty=int
+          ]
+E:\my\Code\Project-Euler\Problem88\Problem88.cpp(173,41): warning C4244: 'initializing': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+  Generating code
+  139 of 248 functions (56.0%) were compiled, the rest were copied from previous compilation.
+    58 functions were new in current compilation
+    18 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Problem88.vcxproj -> E:\my\Code\Project-Euler\x64\Release\Problem88.exe
